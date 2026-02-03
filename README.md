@@ -227,35 +227,6 @@ docker run -d \
   minecraft-server
 ```
 
-## CRIU Checkpointing
-
-This image is designed to be CRIU checkpoint compatible. To enable checkpointing:
-
-```bash
-docker run -d \
-  --cap-add=SYS_PTRACE \
-  --cap-add=CHECKPOINT_RESTORE \
-  --security-opt seccomp=unconfined \
-  -e TEMPLATE=leaf \
-  -e EULA=true \
-  -p 25565:25565 \
-  -v $(pwd)/server-data:/server \
-  --name minecraft-server \
-  minecraft-server
-```
-
-### Creating a Checkpoint
-
-```bash
-docker checkpoint create minecraft-server checkpoint1
-```
-
-### Restoring from Checkpoint
-
-```bash
-docker start --checkpoint checkpoint1 minecraft-server
-```
-
 ## Persistent Data
 
 Mount a volume to `/server` to persist your server data:
