@@ -2,6 +2,8 @@
 
 A flexible Docker image for running Minecraft servers with template support. Supports multiple server types including Leaf, Fabric, and various game modes.
 
+This image is only on github for transparency reasons, this readme is not kept up to date, and we recomment youuse this image at your own risk. This is the image used across all of our server on https://www.apect.net, although it is not recommended to use this image yourself.
+
 ## Docker Hub
 
 This image is available on Docker Hub as [`tacu56/apect-minecraft`](https://hub.docker.com/r/tacu56/apect-minecraft).
