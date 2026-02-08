@@ -42,7 +42,8 @@ ENV TEMPLATE=leaf \
     WHITELIST=false \
     EULA=false \
     SERVER_PORT=25565 \
-    JAVA_OPTS=""
+    JAVA_OPTS="" \
+    STARTUP_FLAGS=""
 
 # Expose default Minecraft port
 EXPOSE 25565

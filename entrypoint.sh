@@ -245,6 +245,10 @@ main() {
     JAVA_OPTIONS=$(build_java_opts)
     log_info "Java options: $JAVA_OPTIONS"
     
+    if [ -n "$STARTUP_FLAGS" ]; then
+        log_info "Custom startup flags: $STARTUP_FLAGS"
+    fi
+    
     log_section "Starting Minecraft Server"
     
     # Change to server directory
@@ -252,7 +256,7 @@ main() {
     
     # Execute server with exec for proper PID 1 handling (CRIU compatible)
     # Using exec ensures signals are properly forwarded
-    exec java $JAVA_OPTIONS -jar server.jar nogui
+    exec java $JAVA_OPTIONS -jar server.jar nogui $STARTUP_FLAGS
 }
 
 # Run main function

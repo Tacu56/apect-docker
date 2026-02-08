@@ -137,6 +137,7 @@ services:
       - CPU_CORES=2
       - WHITELIST=false
       - EULA=true
+      - STARTUP_FLAGS="--world-dir /server/custom-world --max-players 50"
     ports:
       - "25565:25565"
     volumes:
@@ -162,6 +163,7 @@ docker-compose up -d
 | `EULA` | `false` | Accept Minecraft EULA |
 | `SERVER_PORT` | `25565` | Server port |
 | `JAVA_OPTS` | `` | Additional Java options |
+| `STARTUP_FLAGS` | `` | Custom server startup flags |
 
 ## Adding Your Configuration Files
 
@@ -224,6 +226,22 @@ docker run -d \
   -p 25565:25565 \
   -v $(pwd)/lifesteal-data:/server \
   --name lifesteal-server \
+  minecraft-server
+```
+
+### Server with Custom Startup Flags
+
+```bash
+docker run -d \
+  -e TEMPLATE=leaf \
+  -e MIN_RAM=2G \
+  -e MAX_RAM=4G \
+  -e CPU_CORES=2 \
+  -e EULA=true \
+  -e STARTUP_FLAGS="--world-dir /server/custom-world --max-players 50" \
+  -p 25565:25565 \
+  -v $(pwd)/server-data:/server \
+  --name custom-server \
   minecraft-server
 ```
 
