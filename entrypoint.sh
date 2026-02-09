@@ -29,7 +29,7 @@ log_section() {
 # Template to JAR type mapping
 get_jar_type() {
     case "${TEMPLATE,,}" in
-        leaf|lifesteal|parkour|manhunt|bedwars|economy)
+        leaf|lifesteal|parkour|manhunt|bedwars|economy|standalone)
             echo "leaf"
             ;;
         fabric|pixelmon)

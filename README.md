@@ -49,6 +49,7 @@ docker buildx build --platform linux/amd64,linux/arm64 -t minecraft-server .
 | `bedwars` | Leaf | Bedwars gamemode with plugins |
 | `pixelmon` | Fabric | Pixelmon modded server |
 | `economy` | Leaf | Economy/survival server with plugins |
+| `standalone` | Leaf | Standalone Leaf server (customize as needed) |
 
 ## Quick Start
 
@@ -178,7 +179,8 @@ templates/
 ├── manhunt/        # Manhunt configs + plugins
 ├── bedwars/        # Bedwars configs + plugins
 ├── pixelmon/       # Pixelmon configs + mods
-└── economy/        # Economy configs + plugins
+├── economy/        # Economy configs + plugins
+└── standalone/     # Standalone Leaf server (customize as needed)
 ```
 
 ### Custom Server JAR (Optional)
